@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -39,9 +39,13 @@ const Layout = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://github.com/aaronxdd">Dongdong Xu</a>, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>, Hosted on
+          {` `}
+          <a href="https://pages.github.com">GitHub Pages</a>
         </footer>
       </div>
     </>
