@@ -1,0 +1,15 @@
+{
+  "siteMetadata": {
+    "title": "Xu dongdong's blog",
+    "author": {
+      "name": "xudd",
+      "summary": "who works building clean user interfaces with React."
+    },
+    "description": "A blog created with Next.js and Tailwind.css",
+    "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
+    "language": "en-US",
+    "social": {
+      "twitter": ""
+    }
+  }
+}
