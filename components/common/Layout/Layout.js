@@ -15,7 +15,8 @@ export function Layout({ children }) {
         <footer className="text-lg font-light">
           © {new Date().getFullYear()}, Built with{" "}
           <a href="https://nextjs.org/">Next.js</a>
-          &#128293;
+          &#128293;, Deployed on{" "}
+          <a href="https://pages.github.com/">GitHub Pages</a>
         </footer>
       </div>
     </div>

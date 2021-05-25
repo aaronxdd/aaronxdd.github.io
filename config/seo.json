@@ -3,13 +3,13 @@
     "title": "Xu dongdong's blog",
     "author": {
       "name": "xudd",
-      "summary": "who works building clean user interfaces with React."
+      "summary": "who wants to become rich！！！"
     },
     "description": "A blog created with Next.js and Tailwind.css",
-    "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
+    "siteUrl": "https://xudongdong.site",
     "language": "en-US",
     "social": {
-      "twitter": ""
+      "twitter": "https://twitter.com/WhyYouJames"
     }
   }
 }
