@@ -13,7 +13,8 @@ export function Layout({ children }) {
         <Header />
         <main>{children}</main>
         <footer className="text-lg font-light">
-          © {new Date().getFullYear()}, Built with{" "}
+          © {new Date().getFullYear()}{" "}
+          <a href="https://github.com/aaronxdd">Dongdong Xu</a>, Built with{" "}
           <a href="https://nextjs.org/">Next.js</a>
           &#128293;, Deployed on{" "}
           <a href="https://pages.github.com/">GitHub Pages</a>
