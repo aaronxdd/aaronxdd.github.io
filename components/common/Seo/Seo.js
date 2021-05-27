@@ -25,10 +25,23 @@ export function SEO({ title, description = "" }) {
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:creator" content={siteMetadata.social.twitter} />
       <link
-        rel="preload"
-        href="https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg"
-        as="image"
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
       />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
     </Head>
   );
 }
