@@ -1,4 +1,4 @@
-a:hover{text-decoration:underline}p,span{font-weight:300}.blur{filter:blur(5px);transition:filter .5s ease-in}.blur.lazyloaded{filter:blur(0)}
+a:hover{text-decoration:underline}p,span{font-weight:300}.blur{filter:blur(5px);transition:filter .5s ease-in}.blur.lazyloaded{filter:blur(0)}.react-toggle{touch-action:pan-x;display:inline-block;position:relative;cursor:pointer;background-color:transparent;border:0;padding:0;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent}
 
 /*! tailwindcss v2.0.4 | MIT License | https://tailwindcss.com */
 
