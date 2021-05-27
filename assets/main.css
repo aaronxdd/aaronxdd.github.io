@@ -13,5 +13,3 @@
 @layer components {
   @import "./components.css";
 }
-
-@import "./toggle.css";
