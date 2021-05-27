@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Toggle from "react-toggle";
 import { useTheme } from "next-themes";
 
-import "react-toggle/style.css";
+require("react-toggle/style.css");
 
 const siteTitle = "Xu dongdong's blog";
 export function Layout({ children }) {
