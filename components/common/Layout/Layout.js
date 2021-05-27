@@ -2,16 +2,18 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
+import Toggle from "react-toggle";
 import { useTheme } from "next-themes";
+
+import "react-toggle/style.css";
 
 const siteTitle = "Xu dongdong's blog";
 export function Layout({ children }) {
   return (
-    <div className="w-full min-h-screen dark:bg-gray-700 dark:text-white">
-      <div className="max-w-screen-md px-4 py-12 mx-auto antialiased font-body">
+    <div className="w-full min-h-screen dark:bg-gray-700 dark:text-white flex">
+      <div className="max-w-screen-md px-4 py-12 mx-auto antialiased font-body flex flex-col flex-grow">
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
         <footer className="text-lg font-light">
           © {new Date().getFullYear()}{" "}
           <a href="https://github.com/aaronxdd">Dongdong Xu</a>, Built with{" "}
@@ -31,11 +33,8 @@ const Header = () => {
 
   useEffect(() => setMounted(true), []);
 
-  const toggleDarkMode = (checked) => {
-    const isDarkMode = checked;
-
-    if (isDarkMode) setTheme("dark");
-    else setTheme("light");
+  const toggleDarkMode = () => {
+    setTheme(isDarkMode ? 'light' : 'dark');
   };
 
   const isRoot = pathname === "/";
@@ -48,14 +47,18 @@ const Header = () => {
         "mb-2": !isRoot,
       })}
     >
-      <div className={"max-w-md"}>
+      <div className={"max-w-lg"}>
         {isRoot ? <LargeTitle /> : <SmallTitle />}
       </div>
       {mounted && (
-        <DarkModeSwitch
+        <Toggle
           checked={isDarkMode}
+          icons={{
+            checked: <span className="flex items-center h-full">🌛</span>,
+            unchecked: <span className="flex items-center h-full">🌞</span>,
+          }}
+          aria-label="Dark mode toggle"
           onChange={toggleDarkMode}
-          className={isRoot ? 28 : 24}
         />
       )}
     </header>
