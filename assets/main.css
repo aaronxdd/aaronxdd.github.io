@@ -13,3 +13,5 @@
 @layer components {
   @import "./components.css";
 }
+
+@import "./hover.css"

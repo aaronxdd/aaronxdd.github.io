@@ -68,7 +68,7 @@ const LargeTitle = () => (
     <Link href="/">
       <a
         className={clsx(
-          "text-3xl font-black leading-none text-black no-underline font-display",
+          "text-3xl font-black leading-none text-black no-underline font-display hvr-grow-rotate",
           "sm:text-5xl",
           "dark:text-white"
         )}
