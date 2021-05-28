@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Toggle from "react-toggle";
 import { useTheme } from "next-themes";
 import Switch from "../Switch";
 
