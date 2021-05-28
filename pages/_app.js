@@ -1,7 +1,6 @@
 import { ThemeProvider } from "next-themes";
 
 import "@assets/main.css";
-import "react-toggle/style.css";
 
 import "typeface-open-sans";
 import "typeface-merriweather";
