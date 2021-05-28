@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Toggle from "react-toggle";
 import { useTheme } from "next-themes";
+import Switch from "../Switch";
 
 const siteTitle = "Xu dongdong's blog";
 export function Layout({ children }) {
@@ -32,7 +33,7 @@ const Header = () => {
   useEffect(() => setMounted(true), []);
 
   const toggleDarkMode = () => {
-    setTheme(isDarkMode ? 'light' : 'dark');
+    setTheme(isDarkMode ? "light" : "dark");
   };
 
   const isRoot = pathname === "/";
@@ -49,15 +50,16 @@ const Header = () => {
         {isRoot ? <LargeTitle /> : <SmallTitle />}
       </div>
       {mounted && (
-        <Toggle
-          checked={isDarkMode}
-          icons={{
-            checked: <span className="flex items-center h-full">🌛</span>,
-            unchecked: <span className="flex items-center h-full">🌞</span>,
-          }}
-          aria-label="Dark mode toggle"
-          onChange={toggleDarkMode}
-        />
+        <Switch checked={isDarkMode} onChange={toggleDarkMode} />
+        // <Toggle
+        //   checked={isDarkMode}
+        //   icons={{
+        //     checked: <span className="flex items-center h-full">🌛</span>,
+        //     unchecked: <span className="flex items-center h-full">🌞</span>,
+        //   }}
+        //   aria-label="Dark mode toggle"
+        //   onChange={toggleDarkMode}
+        // />
       )}
     </header>
   );
