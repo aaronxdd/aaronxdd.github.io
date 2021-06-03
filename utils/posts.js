@@ -1,14 +1,19 @@
 import matter from "gray-matter";
-import fs from "fs";
+import { readdirSync, readFileSync } from "fs";
 
 export function getPostsFolders() {
   // Get all posts folders located in `content/posts`
-  const postsFolders = fs
-    .readdirSync(`${process.cwd()}/content/posts`)
-    .map((folderName) => ({
-      directory: folderName,
-      filename: `${folderName}.md`,
-    }));
+  const postsFolders = [];
+  readdirSync(`${process.cwd()}/content/posts`).forEach((dirName) => {
+    readdirSync(`${process.cwd()}/content/posts/${dirName}`).forEach(
+      (fileName) => {
+        postsFolders.push({
+          directory: dirName,
+          filename: fileName,
+        });
+      }
+    );
+  });
 
   return postsFolders;
 }
@@ -27,9 +32,9 @@ export function getSortedPosts() {
   const posts = postFolders
     .map(({ filename, directory }) => {
       // Get raw content from file
-      const markdownWithMetadata = fs
-        .readFileSync(`content/posts/${directory}/${filename}`)
-        .toString();
+      const markdownWithMetadata = readFileSync(
+        `content/posts/${directory}/${filename}`
+      ).toString();
 
       // Parse markdown, get frontmatter data, excerpt and content.
       const { data, excerpt, content } = matter(markdownWithMetadata);
