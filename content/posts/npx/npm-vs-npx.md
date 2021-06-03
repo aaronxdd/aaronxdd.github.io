@@ -27,7 +27,7 @@ npm本身不会运行任何库，如果你想使用npm来运行某些库，你�
 
 当npm执行安装库的指令时（npm install xxx)，npm会创建指向它们的链接
 1. 本地安装会在 **./node_modules/.bin/** 文件夹中创建链接
-2. 全局安装会在全局的 **bin/** 文件夹侠创建链接（例如：Linux系统是 **/usr/local/bin** ，Windows系统是 **%AppData%/npm** ）
+2. 全局安装会在全局的 **bin/** 文件夹下创建链接（例如：Linux系统是 **/usr/local/bin** ，Windows系统是 **%AppData%/npm** ）
 
 你可以这样执行库
 

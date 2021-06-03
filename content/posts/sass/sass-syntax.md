@@ -1,5 +1,5 @@
 ---
-title: Sass 语法篇
+title: Sass语法篇
 date: 2021-05-28T16:34:32.169Z
 description: Sass的基本语法，以及语法声明和表达式介绍
 ---
