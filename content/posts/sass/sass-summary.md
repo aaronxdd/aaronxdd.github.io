@@ -70,17 +70,32 @@ description: Sass的常用功能总结
 
 ## mixin
 
+**mixin** 前面介绍占位符的时候也稍待介绍下，它主要用来修饰 **function** ，可以传入参数，也可以给参数设置个默认值
+
+![sass-mixin](sass-mixin.jpeg)
+
+## SassScript相关
+
+### @if和@else
+
+流程控制指令一般会配合 **mixin** 一起使用
+
+![sass-if-else](sass-if-else.jpeg)
+
+### @for
+
+![sass-for](sass-for.jpeg)
 
 
+### @while
+
+![sass-while](sass-while.jpeg)
 
 
 ## 参考
 - [掌握sass这些技能，帮助提升开发效率](https://juejin.cn/post/6870009638478151688)
-- [sass-variable](https://sass-lang.com/documentation/variables)
-- [sass-nesting](https://sass-lang.com/documentation/style-rules#nesting)
 - [your-nesting-is-harmful](https://medium.com/@verpixelt/your-nesting-is-harmful-a1ffddaf7e43)
 - [your-placeholder-selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
-- [sass-parent-selector](https://sass-lang.com/documentation/style-rules/parent-selector)
 
 
 
