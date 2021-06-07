@@ -12,16 +12,16 @@ description: Sass的常用功能总结
 
 ## 变量
 
-变量以 $ 开头，非驼峰写法，以`-`做命名切割
+变量以 **$** 开头，非驼峰写法，以 **-** 做命名切割
 
 ![sass-variable](sass-variable.jpeg)
 
-⚠️**注意**：原生CSS也是带有变量功能的，命名以`--`开头，点击[这里](https://sass-lang.com/documentation/variables)查看具体的区别
+⚠️**注意**：原生CSS也是带有变量功能的，命名以 **--** 开头，点击[这里](https://sass-lang.com/documentation/variables)查看具体的区别
 
 
 ## 嵌套
 
-原生CSS是不支持嵌套写法的
+原生CSS是不支持嵌套写法的，但有个相关的[草案](https://drafts.csswg.org/css-nesting-1)，相信不久的将来也会支持
 
 ![sass-css-nesting](sass-css-nesting.jpeg)
 
@@ -36,19 +36,19 @@ description: Sass的常用功能总结
 
 ## 父选择器（&）
 
-在嵌套中，我们用 `&` 来表示当前位置的父类节点，通常在写伪类的时候会用到
+在嵌套中，我们用 **&** 来表示当前位置的父类节点，通常在写伪类的时候会用到
 
 ![sass-&](sass-&.jpeg)
 
 ## 占位符选择器（placeholder）
 
-占位符选择器以 `%` 开头，通过 `@extend` 来应用
+占位符选择器以 **%** 开头，通过 **@extend** 来应用
 
 ![sass-placeholder](sass-placeholder.jpeg)
 
-编译出来的CSS代码中并不会包括 `%placeholder` 规则中的样式，除非是通过 `@extend` 对其进行调用
+编译出来的CSS代码中并不会包括 **%placeholder** 规则中的样式，除非是通过 **@extend** 对其进行调用
 
-它和 `mixin` 的使用也很像，但是还是有区别
+它和 **mixin** 的使用也很像，但是还是有区别
 
 ### mixin
 
@@ -60,15 +60,15 @@ description: Sass的常用功能总结
 
 ## 继承（@extend）
 
-所谓 `@extend` 用法就是你为通用样式写一个`.`样式类，然后要用到改样式的地方再 `@extend`
+所谓 **@extend** 用法就是你为通用样式写一个 **.** 样式类，然后要用到改样式的地方再 **@extend**
 
 ![sass-extend](sass-extend.jpeg)
 
-我们可以从上图中很直接的看出它与 `%placeholder` 的区别
+我们可以从上图中很直接的看出它与 **%placeholder** 的区别
 
-还有一个问题，`.icon` 类我们在 **Html** 中不会用到，因为它仅仅是用来被 `@extend` 的，我们可以使用 `%placeholder` 来解决这种现象
+还有一个问题，**.icon** 类我们在 **Html** 中不会用到，因为它仅仅是用来被 **@extend** 的，我们可以使用 **%placeholder** 来解决这种现象
 
-
+## mixin
 
 
 
@@ -78,7 +78,6 @@ description: Sass的常用功能总结
 - [掌握sass这些技能，帮助提升开发效率](https://juejin.cn/post/6870009638478151688)
 - [sass-variable](https://sass-lang.com/documentation/variables)
 - [sass-nesting](https://sass-lang.com/documentation/style-rules#nesting)
-- [css-nesting-drafts](https://drafts.csswg.org/css-nesting-1)
 - [your-nesting-is-harmful](https://medium.com/@verpixelt/your-nesting-is-harmful-a1ffddaf7e43)
 - [your-placeholder-selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 - [sass-parent-selector](https://sass-lang.com/documentation/style-rules/parent-selector)

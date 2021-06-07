@@ -81,7 +81,7 @@ $ npm install -g npx
 ``` dash
 $ npx your-package
 ```
-**npx** 将检查 **$ PATH** 或本地项目二进制文件中是否存在 `<command>` 或 `<package>` ，如果存在，它将执行该命令。
+**npx** 将检查 **$ PATH** 或本地项目二进制文件中是否存在 **<command>** 或 **<package>** ，如果存在，它将执行该命令。
 
 ## Execute packages that are not previously installed
 
@@ -95,7 +95,7 @@ $ npx your-package
 
 这很酷！
 
-你可以使用 **npx** 运行任何 `GitHub gists` 和仓库。 让我们集中精力执行 `GitHub gists` ，因为它更容易创建。
+你可以使用 **npx** 运行任何 **GitHub gists** 和仓库。 让我们集中精力执行 **GitHub gists** ，因为它更容易创建。
 
 在[这里](https://gist.github.com/Tynael/0861d31ea17796c9a5b4a0162eb3c1e8)，你可以找到此示例代码。
 
@@ -105,7 +105,7 @@ $ npx your-package
 
 **npx** 帮助我们避免安装仅仅想尝试的不必要的库
 
-它还提供了一种通过直连 `GitHub gists` 或 `仓库` 来执行包命令的更简单快捷的方式
+它还提供了一种通过直连 **GitHub gists** 或 **仓库** 来执行包命令的更简单快捷的方式
 
 如果您以前从未使用过 **npx**，那么现在是开始的好时机！
 
