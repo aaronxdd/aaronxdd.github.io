@@ -36,12 +36,51 @@ description: Sass的常用功能总结
 
 ## 父选择器（&）
 
+在嵌套中，我们用 `&` 来表示当前位置的父类节点，通常在写伪类的时候会用到
+
+![sass-&](sass-&.jpeg)
+
+## 占位符选择器（placeholder）
+
+占位符选择器以 `%` 开头，通过 `@extend` 来应用
+
+![sass-placeholder](sass-placeholder.jpeg)
+
+编译出来的CSS代码中并不会包括 `%placeholder` 规则中的样式，除非是通过 `@extend` 对其进行调用
+
+它和 `mixin` 的使用也很像，但是还是有区别
+
+### mixin
+
+![sass-placeholder-mixin](sass-placeholder-mixin.jpeg)
+
+### placeholder
+
+![sass-placeholder1](sass-placeholder1.jpeg)
+
+## 继承（@extend）
+
+所谓 `@extend` 用法就是你为通用样式写一个`.`样式类，然后要用到改样式的地方再 `@extend`
+
+![sass-extend](sass-extend.jpeg)
+
+我们可以从上图中很直接的看出它与 `%placeholder` 的区别
+
+还有一个问题，`.icon` 类我们在 **Html** 中不会用到，因为它仅仅是用来被 `@extend` 的，我们可以使用 `%placeholder` 来解决这种现象
+
+
+
+
+
+
 
 ## 参考
 - [掌握sass这些技能，帮助提升开发效率](https://juejin.cn/post/6870009638478151688)
 - [sass-variable](https://sass-lang.com/documentation/variables)
 - [sass-nesting](https://sass-lang.com/documentation/style-rules#nesting)
+- [css-nesting-drafts](https://drafts.csswg.org/css-nesting-1)
 - [your-nesting-is-harmful](https://medium.com/@verpixelt/your-nesting-is-harmful-a1ffddaf7e43)
+- [your-placeholder-selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 - [sass-parent-selector](https://sass-lang.com/documentation/style-rules/parent-selector)
 
 
