@@ -17,7 +17,7 @@ description: npx和npm的区别是啥，npx能解决npm的哪些痛点
 
 首先，让我们先来了解下 **npm** 到底是什么，我们可以通过它来干些啥。
 
-### npm the package manager
+## npm the package manager
 
 它是一个在线资源库，用于发布开源的Node.js项目
 
@@ -55,7 +55,7 @@ npm run your-package
 
 庆幸的是，**npx** 可以派上用场了。
 
-### npm the package runner
+## npm the package runner
 
 从 **npm**5.2.0版本开始，安装 **npm** 会预安装上 **npx**。
 
@@ -75,7 +75,7 @@ $ npm install -g npx
 
 确定安装好之后，我们通过一些用例来看看 **npx** 是多么的方便有用。
 
-### Run a locally installed package easily
+## Run a locally installed package easily
 
 如果要执行本地安装的库，只需输入：
 ``` dash
@@ -83,13 +83,13 @@ $ npx your-package
 ```
 **npx** 将检查 **$ PATH** 或本地项目二进制文件中是否存在 `<command>` 或 `<package>` ，如果存在，它将执行该命令。
 
-### Execute packages that are not previously installed
+## Execute packages that are not previously installed
 
 另一个主要优点是能够执行未安装的库。
 
 有时，您只是想使用某些库的命令行指令，但不想安装它们。 这意味着你可以节省一些磁盘空间，仅在需要它们时才安装它们。
 
-### Run code directly from GitHub
+## Run code directly from GitHub
 
 ![execute-gist-scripts-with-npx](execute-gist-scripts-with-npx.jpeg)
 
@@ -101,7 +101,7 @@ $ npx your-package
 
 在执行之前，请确保仔细阅读所有 script，以避免由于恶意代码而导致的严重问题。
 
-### 总结
+## 总结
 
 **npx** 帮助我们避免安装仅仅想尝试的不必要的库
 
@@ -109,5 +109,5 @@ $ npx your-package
 
 如果您以前从未使用过 **npx**，那么现在是开始的好时机！
 
-### 参考
+## 参考
 - [npm-vs-npx-whats-the-difference](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/)

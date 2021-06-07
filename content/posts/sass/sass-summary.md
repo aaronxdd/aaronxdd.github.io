@@ -18,9 +18,31 @@ description: Sass的常用功能总结
 
 ⚠️**注意**：原生CSS也是带有变量功能的，命名以`--`开头，点击[这里](https://sass-lang.com/documentation/variables)查看具体的区别
 
+
 ## 嵌套
 
 原生CSS是不支持嵌套写法的
+
+![sass-css-nesting](sass-css-nesting.jpeg)
+
+用Sass我们可以这样写
+
+![sass-css-nesting](sass-nesting.jpeg)
+
+嵌套写法也是我们大部分人最常用的功能，没有之一。。。
+
+⚠️**注意**：嵌套是很有用，但也是很容易滥用的地方，一般建议嵌套不超过三层，否则会影响性能，在Sass中还提供了一个[@at-root](https://sass-lang.com/documentation/at-rules/at-root) 的功能，可以让你直接跳出去。这样也可以避免嵌套层级过深。
+
+
+## 父选择器（&）
+
+
+## 参考
+- [掌握sass这些技能，帮助提升开发效率](https://juejin.cn/post/6870009638478151688)
+- [sass-variable](https://sass-lang.com/documentation/variables)
+- [sass-nesting](https://sass-lang.com/documentation/style-rules#nesting)
+- [your-nesting-is-harmful](https://medium.com/@verpixelt/your-nesting-is-harmful-a1ffddaf7e43)
+- [sass-parent-selector](https://sass-lang.com/documentation/style-rules/parent-selector)
 
 
 
