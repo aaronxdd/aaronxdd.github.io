@@ -4,6 +4,8 @@ date: 2021-06-08T10:45:32.169Z
 description: 资源路径如何正确的定义？应该遵守怎样的命名规范？
 ---
 
+在 **REST** 中，主要的数据描述称为 **Resource**，拥有明确一致的 **REST** 命名规范，长期来看将是最好的决策
+
 > 资源可以是单例或者集合，比如说，customers是一个集合资源，customer是一个单个资源。我们在URI中可以用"/customers"来定义集合资源，用"/customers/{customerId}"来定义单个资源。
 
 > 一个资源也可以包含子集合资源，比如说，一个顾客他名下有多个account，我们可以这样"/customers/{customerId}/accounts"表示。相同的，单独表示某个顾客的某个账号，我们可以这样"/customers/{customerId}/accounts/{accountId}"。
@@ -73,4 +75,5 @@ http://api.example.com/device-management/managed-devices?region=USA&brand=XYZ&so
 ```
 
 
-## 参考： *https://restfulapi.net/resource-naming*
+## 参考：
+- [resource-naming](https://restfulapi.net/resource-naming)
