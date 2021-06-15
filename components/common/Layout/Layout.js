@@ -52,15 +52,6 @@ const Header = () => {
       </div>
       {mounted && (
         <Switch checked={isDarkMode} onChange={toggleDarkMode} />
-        // <Toggle
-        //   checked={isDarkMode}
-        //   icons={{
-        //     checked: <span className="flex items-center h-full">🌛</span>,
-        //     unchecked: <span className="flex items-center h-full">🌞</span>,
-        //   }}
-        //   aria-label="Dark mode toggle"
-        //   onChange={toggleDarkMode}
-        // />
       )}
     </header>
   );
