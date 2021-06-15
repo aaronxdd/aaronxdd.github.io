@@ -11,8 +11,11 @@ export const request = async(url) => {
 
 export const getCity = () => {
   if ("geolocation" in navigator) {
-    console.log('====geolocation===', geolocation);
     /* 地理位置服务可用 */
+      console.log('----geolocation----');
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log('----position----', position);
+    });
   } else {
     /* 地理位置服务不可用 */
   }
