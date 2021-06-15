@@ -12,8 +12,9 @@ export const getDay = () => {
 };
 
 export const request = async (url) => {
-  const res = await fetch(url, { mode: "no-cors" });
+  const res = await fetch(url);
   const data = await res.json();
+  console.log("----data----", data);
   return data;
 };
 
