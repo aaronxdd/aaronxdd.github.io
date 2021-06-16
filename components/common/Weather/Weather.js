@@ -6,10 +6,10 @@ const Weather = () => {
   const [temperature, setTemperature] = useState("");
 
   useEffect(async () => {
-    const domain =
-      process.env.NODE_ENV === "development" ? "/api" : "https://apis.juhe.cn";
+    // const domain =
+    //   process.env.NODE_ENV === "development" ? "/api" : "https://apis.juhe.cn";
     const data = await request(
-      `${domain}/simpleWeather/query?city=%E4%B8%8A%E6%B5%B7&key=f452564f45875556bbdc49d9217b7952`
+      `/api/simpleWeather/query?city=%E4%B8%8A%E6%B5%B7&key=f452564f45875556bbdc49d9217b7952`
     );
     getCity();
     const { error_code, result } = data;
