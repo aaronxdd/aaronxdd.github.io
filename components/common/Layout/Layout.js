@@ -4,14 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import Switch from "../Switch";
-import Weather from "../Weather";
 
 const siteTitle = "Xu dongdong's blog";
 export function Layout({ children }) {
   return (
     <div className="w-full min-h-screen dark:bg-gray-700 dark:text-white flex">
-      <Weather />
-      <div className="max-w-screen-md px-4 py-12 antialiased font-body flex flex-col flex-grow">
+      <div className="max-w-screen-md px-4 py-12 mx-auto antialiased font-body flex flex-col flex-grow">
         <Header />
         <main className="flex-grow">{children}</main>
         <footer className="text-lg font-light">
@@ -50,9 +48,7 @@ const Header = () => {
       <div className={"max-w-lg"}>
         {isRoot ? <LargeTitle /> : <SmallTitle />}
       </div>
-      {mounted && (
-        <Switch checked={isDarkMode} onChange={toggleDarkMode} />
-      )}
+      {mounted && <Switch checked={isDarkMode} onChange={toggleDarkMode} />}
     </header>
   );
 };
