@@ -1,5 +1,5 @@
 ---
-title: 函数式编程-Currying
+title: 柯里化-Currying
 date: 2021-06-23T20:00:32.169Z
 description: 
 ---
