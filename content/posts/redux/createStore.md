@@ -1,5 +1,5 @@
 ---
-title: redux源码解析-createStore
+title: redux源码系列之createStore
 date: 2021-06-23T11:44:32.169Z
 description: 深入源码解析createStore内部代码
 ---
