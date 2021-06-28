@@ -12,7 +12,7 @@ export function Layout({ children }) {
       <div className="max-w-screen-md px-4 py-12 mx-auto antialiased font-body flex flex-col flex-grow">
         <Header />
         <main className="flex-grow">{children}</main>
-        <footer className="text-lg font-light">
+        <footer className="text-lg font-light mt-3">
           © {new Date().getFullYear()}{" "}
           <a href="https://github.com/aaronxdd">Dongdong Xu</a>, Built with{" "}
           <a href="https://nextjs.org/">Next.js</a>
