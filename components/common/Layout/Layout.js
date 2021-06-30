@@ -14,7 +14,8 @@ export function Layout({ children }) {
         <main className="flex-grow">{children}</main>
         <footer className="text-lg font-light mt-3">
           © {new Date().getFullYear()}{" "}
-          <a href="https://github.com/aaronxdd">Dongdong Xu</a>, Built with{" "}
+          {/* <a href="https://github.com/aaronxdd">Dongdong Xu</a>,  */}
+          Built with{" "}
           <a href="https://nextjs.org/">Next.js</a>
           &#128293;, Deployed on{" "}
           <a href="https://pages.github.com/">GitHub Pages</a>
