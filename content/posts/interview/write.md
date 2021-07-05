@@ -75,3 +75,50 @@ Function.prototype.myBind = (content) => {
       }, delay);
     }
    ```
+
+3. 手写数组flat
+
+4. 写一个 mySetInterVal(fn, a, b),每次间隔 a,a+b,a+2b 的时间，然后写一个 myClear，停止上面的 mySetInterVal
+
+``` javascript
+function mySetInterVal(fn, a, b) {
+  this.a = a;
+  this.b = b;
+  this.time = 0;
+  this.handle = -1;
+  this.start = () => {
+    this.handle = setTimeout(() => {
+      fn();
+      this.time++;
+      this.start();
+    }, this.a + this.time * this.b);
+  }
+
+  this.stop = () => {
+    clearTimeout(this.handle);
+    this.time = 0;
+  }
+}
+
+var a = new mySetInterVal(() => {console.log('123')},1000, 2000 );
+a.start();
+a.stop();
+```
+
+5. 斐波那契数列
+   
+``` javascript
+const Fibonacci = (n) => {
+  if (n < 0) throw new Error('输入的数字不能小于0');
+  if (n < 2) return n;
+  return Fibonacci(n - 1) + Fibonacci(n - 2)
+}
+```
+
+6. 字符串出现的不重复最长长度
+   
+7. 实现 add(1)(2)(3)
+   
+``` javascript
+const add = (a) => (b) => (c) => a + b + c;
+```
