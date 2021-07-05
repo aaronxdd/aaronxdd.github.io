@@ -114,11 +114,140 @@ const Fibonacci = (n) => {
   return Fibonacci(n - 1) + Fibonacci(n - 2)
 }
 ```
-
-6. 字符串出现的不重复最长长度
    
 7. 实现 add(1)(2)(3)
    
 ``` javascript
 const add = (a) => (b) => (c) => a + b + c;
+```
+
+8. 数据类型判断
+
+typeof 可以正确识别：Undefined、Boolean、Number、String、Symbol、Function 等类型的数据，但是对于其他的都会认为是 object，比如 Null、Date 等，所以通过 typeof 来判断数据类型会不准确。但是可以使用 Object.prototype.toString 实现。
+
+``` javascript
+const getType = (obj) => {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+}
+```
+
+9. 数组扁平化
+    
+数组扁平化就是将 [1, [2, [3]]] 这种多层的数组拍平成一层 [1, 2, 3]。使用 Array.prototype.flat 可以直接将多层数组拍平成一层：
+
+``` javascript
+[1, [2, [3]]].flat(2)  // [1, 2, 3]
+```
+
+关键：递归
+
+``` javascript
+const flatten = arr => {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      newArr.concat(flatten(arr[i]))
+      return
+    }
+    newArr.push(arr[i])
+  }
+  return neaArr;
+}
+```
+
+10. 深浅拷贝
+
+浅拷贝：只考虑对象类型
+
+ES5版
+``` javascript
+function shallowCopy(obj) {
+  if (typeof obj !== 'object') return
+
+  let newObj = obj instanceof Array ? [] : {};
+
+  for (let i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      newObj[i] = obj[i];
+    }
+  }
+
+  return newObj;
+}
+```
+
+ES6版
+``` javascript
+const shallowCopy = obj => Array.isArray(obj) ? [...obj] : {...obj}
+```
+
+深拷贝
+
+``` javascript
+const deepClone = obj => {
+  if (typeof obj !== 'object') return;
+  let newObj = obj instanceof Array ? [] : {};
+  
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (typeof obj[key] === 'object') {
+        newObj[key] = deepClone(obj[key]);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  return newObj;
+}
+```
+
+11. 解析 URL 参数为对象
+  
+``` javascript
+const urlSearch = href => {
+  let obj = {};
+  const queryIndex = href.indexOf('?');
+  const urlOptions = href.slice(queryIndex + 1, href.length);
+  const options = urlOptions.split('&');
+  options.map(option => {
+    const equalIndex = option.indexOf('=');
+    obj[option.slice(0, equalIndex)] = option.slice(equalIndex + 1, option.length);
+  });
+  return obj;
+}
+```
+
+12. 字符串模板
+13. 实现柯里化（Currying）
+
+``` javascript
+function curry(fn) {
+    let judge = (...args) => {
+        if (args.length == fn.length) return fn(...args)
+        return (...arg) => judge(...args, ...arg)
+    }
+    return judge
+}
+```
+
+14. 手写AJAX
+
+``` js
+const myAjax = (url) => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== 4) return
+      if (xhr.status === 200) {
+        resolve(xhr.responseText)
+      } else {
+        reject(xhr.responseText)
+      }
+    }
+    xhr.send();
+  })
+}
 ```

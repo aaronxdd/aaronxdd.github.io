@@ -49,6 +49,38 @@ const sum = arr => arr.reduce((a, b) => a + b)
 - 如果到了就设置图片的 src 属性。
 - 绑定 window 的 scroll 事件，对其进行事件监听（搭配节流）。
 
+``` js
+let imgList = [...document.querySelectorAll('img')]
+let length = imgList.length
+
+// 修正错误，需要加上自执行
+- const imgLazyLoad = function() {
++ const imgLazyLoad = (function() {
+    let count = 0
+    
+   return function() {
+        let deleteIndexList = []
+        imgList.forEach((img, index) => {
+            let rect = img.getBoundingClientRect()
+            if (rect.top < window.innerHeight) {
+                img.src = img.dataset.src
+                deleteIndexList.push(index)
+                count++
+                if (count === length) {
+                    document.removeEventListener('scroll', imgLazyLoad)
+                }
+            }
+        })
+        imgList = imgList.filter((img, index) => !deleteIndexList.includes(index))
+   }
+- }
++ })()
+
+// 这里最好加上节流处理
+document.addEventListener('scroll', imgLazyLoad)
+
+```
+
 7. 懒加载和预加载
 
   两者都是提高页面性能有效的办法，两者主要区别是一个是提前加载，一个是迟缓甚至不加载。懒加载对服务器前端有一定的缓解压力作用，预加载则会增加服务器前端压力。
@@ -184,3 +216,68 @@ cl.method('第一次调用').method('第二次链式调用').method('第三次�
 15. 手写Promise
     
 16. 实现 Promise.all
+    
+17. 继承
+    
+**原型链继承**
+
+``` javascript
+function Animal() {
+    this.colors = ['black', 'white']
+}
+Animal.prototype.getColor = function() {
+    return this.colors
+}
+function Dog() {}
+Dog.prototype =  new Animal()
+
+let dog1 = new Dog()
+dog1.colors.push('brown')
+let dog2 = new Dog()
+console.log(dog2.colors)  // ['black', 'white', 'brown']
+```
+
+**问题**
+
+- 原型中的属性会被共享
+- 实例化时无法给父类构造函数传参
+  
+**借用构造函数实现继承**
+
+``` javascript
+function Animal(name) {
+    this.name = name
+    this.getName = function() {
+        return this.name
+    }
+}
+function Dog(name) {
+    Animal.call(this, name)
+}
+```
+借用构造函数实现继承解决了原型链继承的 2 个问题：引用类型共享问题以及传参问题。但是由于方法必须定义在构造函数中，所以**会导致每次创建子类实例都会创建一遍方法**。
+
+**组合继承**
+
+组合继承结合了原型链和盗用构造函数，将两者的优点集中了起来。基本的思路是使用原型链继承原型上的属性和方法，而通过盗用构造函数继承实例属性。这样既可以把方法定义在原型上以实现重用，又可以让每个实例都有自己的属性。
+
+``` javascript
+function Animal(name) {
+    this.name = name
+    this.colors = ['black', 'white']
+}
+Animal.prototype.getName = function() {
+    return this.name
+}
+function Dog(name, age) {
+    Animal.call(this, name)
+    this.age = age
+}
+Dog.prototype =  new Animal()
+Dog.prototype.constructor = Dog
+
+let dog1 = new Dog('奶昔', 2)
+dog1.colors.push('brown')
+let dog2 = new Dog('哈赤', 1)
+console.log(dog2) // { name: "哈赤", colors: ["black", "white"], age: 1 }
+```

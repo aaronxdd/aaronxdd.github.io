@@ -32,3 +32,5 @@ const findTotal = (nums, target) => {
 }
 ```
 
+
+### 2. 字符串出现的不重复最长长度
