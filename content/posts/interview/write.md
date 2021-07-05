@@ -251,3 +251,72 @@ const myAjax = (url) => {
   })
 }
 ```
+
+15. 手写Promise
+
+``` javascript
+const PADDING = "PADDING";
+const FULFILLED = "FULFILLED";
+const REJECTED = "REJECTED";
+
+class MyPromise {
+  constructor(executor) {
+    this.status = PADDING;
+    this.value = undefined;
+    this.error = undefined;
+
+    let resolve = (value) => {
+      if (this.status === PADDING) {
+        this.value = value;
+        this.status = FULFILLED;
+      }
+    }
+
+    let reject = (error) => {
+      if (this.status === PADDING) {
+        this.error = error;
+        this.status = REJECTED;
+      }
+    }
+
+    try {
+      executor(resolve, reject)
+    } catch (e) {
+      reject(e);
+    }
+  }
+
+  then(onFulfilled, onRejected) {
+    if (this.status === FULFILLED) {
+      onFulfilled(this.value)
+    }
+
+    if (this.status === REJECTED) {
+      onRejected(this.error)
+    }
+  }
+}
+```
+    
+16. 实现 Promise.all
+  
+``` js
+const promiseAll = (promises) => {
+  if (Array.isArray(promises)) {
+    throw new Error('the arguments must be an array !!!')
+  }
+  const promisesLength = promises.length;
+  let current = 0, result = [];
+  new Promise((resolve, reject) => {
+    promises.forEach((promise, i) => {
+      Promise.resolve(promise).then(value => {
+        current ++;
+        result[i] = value;
+        if (current === promisesLength) {
+          resolve(result)
+        }
+      }, error => reject(error))
+    })
+  })
+}
+```
