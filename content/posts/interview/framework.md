@@ -41,3 +41,10 @@ description:
 
 7. 说一下 react-fiber
    [查看答案](https://github.com/lgwebdream/FE-Interview/issues/33)
+
+8. React 18的新特性
+
+- 新的 **ReactDOM.createRoot()** API（替换 **ReactDOM.render()**）
+- 新的 **startTransition** API（用于非紧急状态更新）
+- 渲染的自动批处理优化（主要解决异步回调中无法批处理的问题）
+- 支持 **React.lazy** 的 全新 SSR 架构（支持 **<Suspense>** 组件）
