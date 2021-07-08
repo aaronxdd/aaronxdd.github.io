@@ -195,3 +195,54 @@ const maxSubArray = (nums) => {
   return max;
 };
 ```
+
+### 5. 反转链表
+
+#### 题目描述
+
+定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+
+#### 示例:
+
+``` javascript
+const ListNode = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: {
+          value: 5,
+          next: null
+        }
+      }
+    }
+  }
+}
+
+输入: 1->2->3->4->5->NULL
+输出: 5->4->3->2->1->NULL
+```
+
+#### 限制：
+
+``` javascript
+0 <= 节点个数 <= 5000
+```
+
+``` javascript
+const reverseList = (head) => {
+  let pre = null;
+  let cur = head;
+  while(cur) {
+    const next = cur.next;
+    cur.next = pre;
+    pre = cur;
+    cur = next;
+  }
+  return pre;
+}
+```
+

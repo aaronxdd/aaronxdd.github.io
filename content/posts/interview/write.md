@@ -5,7 +5,7 @@ description:
 ---
 
   
-1. 手写 bind、call、apply
+## 1. 手写 bind、call、apply
 
 ``` javascript
 // call
@@ -45,7 +45,7 @@ Function.prototype.myBind = (content) => {
 }
 ```
 
-2. 手写防抖节流
+## 2. 手写防抖节流
    
    防抖
    ``` javascript
@@ -76,9 +76,9 @@ Function.prototype.myBind = (content) => {
     }
    ```
 
-3. 手写数组flat
+## 3. 手写数组flat
 
-4. 写一个 mySetInterVal(fn, a, b),每次间隔 a,a+b,a+2b 的时间，然后写一个 myClear，停止上面的 mySetInterVal
+## 4. 写一个 mySetInterVal(fn, a, b),每次间隔 a,a+b,a+2b 的时间，然后写一个 myClear，停止上面的 mySetInterVal
 
 ``` javascript
 function mySetInterVal(fn, a, b) {
@@ -105,7 +105,7 @@ a.start();
 a.stop();
 ```
 
-5. 斐波那契数列
+## 5. 斐波那契数列
    
 ``` javascript
 const Fibonacci = (n) => {
@@ -115,13 +115,13 @@ const Fibonacci = (n) => {
 }
 ```
    
-7. 实现 add(1)(2)(3)
+## 7. 实现 add(1)(2)(3)
    
 ``` javascript
 const add = (a) => (b) => (c) => a + b + c;
 ```
 
-8. 数据类型判断
+## 8. 数据类型判断
 
 typeof 可以正确识别：Undefined、Boolean、Number、String、Symbol、Function 等类型的数据，但是对于其他的都会认为是 object，比如 Null、Date 等，所以通过 typeof 来判断数据类型会不准确。但是可以使用 Object.prototype.toString 实现。
 
@@ -131,7 +131,7 @@ const getType = (obj) => {
 }
 ```
 
-9. 数组扁平化
+## 9. 数组扁平化
     
 数组扁平化就是将 [1, [2, [3]]] 这种多层的数组拍平成一层 [1, 2, 3]。使用 Array.prototype.flat 可以直接将多层数组拍平成一层：
 
@@ -155,7 +155,7 @@ const flatten = arr => {
 }
 ```
 
-10. 深浅拷贝
+## 10. 深浅拷贝
 
 浅拷贝：只考虑对象类型
 
@@ -202,7 +202,7 @@ const deepClone = obj => {
 }
 ```
 
-11. 解析 URL 参数为对象
+## 11. 解析 URL 参数为对象
   
 ``` javascript
 const urlSearch = href => {
@@ -218,8 +218,8 @@ const urlSearch = href => {
 }
 ```
 
-12. 字符串模板
-13. 实现柯里化（Currying）
+## 12. 字符串模板
+## 13. 实现柯里化（Currying）
 
 ``` javascript
 function curry(fn) {
@@ -231,7 +231,7 @@ function curry(fn) {
 }
 ```
 
-14. 手写AJAX
+## 14. 手写AJAX
 
 ``` js
 const myAjax = (url) => {
@@ -252,7 +252,7 @@ const myAjax = (url) => {
 }
 ```
 
-15. 手写Promise
+## 15. 手写Promise
 
 ``` javascript
 const PADDING = "PADDING";
@@ -298,7 +298,7 @@ class MyPromise {
 }
 ```
     
-16. 实现 Promise.all
+## 16. 实现 Promise.all
   
 ``` js
 const promiseAll = (promises) => {
@@ -320,3 +320,6 @@ const promiseAll = (promises) => {
   })
 }
 ```
+
+## 17. 手写模版字符串
+
