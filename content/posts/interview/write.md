@@ -323,3 +323,14 @@ const promiseAll = (promises) => {
 
 ## 17. 手写模版字符串
 
+``` javascript
+const render = (str, data) => {
+  const reg = /\{\{(\w+)\}\}/;
+  if (reg.test(str)) {
+    const key = reg.exec(str)[1];
+    str = str.replace(reg, data[key]);
+    return render(str, data);
+  }
+  return str;
+} 
+```
