@@ -4,35 +4,37 @@ date: 2021-07-05T21:53:32.169Z
 description: 
 ---
 
-1. infinity代表什么数据
+## 1. infinity代表什么数据
 
   在JS中Infinity用于表示无穷大的数值，且不是常量，即无法明确表示它到底有多大。可以通过isFinite(val)判断当前数字是否是无穷大，函数返回true表示不是无穷大，返回false表示是无穷大。
 
 
-2. 如何计算动画的帧率（FPS）
+## 2. 如何计算动画的帧率（FPS）
 
 - 可以借助requestAnimationFrame API，requestAnimationFrame 使用一个回调函数作为参数。这个回调函数会在浏览器重绘之前调用。
 
 - requestAnimationFrame的回调函数执行次数通常与浏览器屏幕刷新次数相匹配，而利用这个API实现动画的原理就是回调函数内再次调用requestAnimationFrame，所以页面不断重绘时，然后检测1秒内requestAnimationFrame调用的次数，就是当前的FPS
 
 
-3. 请说说new String("A")和String("A")分别返回的结果，请解释为什么
+## 3. 请说说new String("A")和String("A")分别返回的结果，请解释为什么
 
-  new String("A") :
+- new String("A") :
+  
   返回类型：引用类型，堆内存存储
   返回值：字符串对象
 
-  String("A”) ：
+- String("A”) ：
+  
   返回类型：基本类型，栈内存存储
   返回值：字符串值
 
-4. 请通过reduce函数实现一维数组的求和
+## 4. 请通过reduce函数实现一维数组的求和
 
 ``` javascript
 const sum = arr => arr.reduce((a, b) => a + b)
 ```
 
-5. 请说说严格模式下的this指向
+## 5. 请说说严格模式下的this指向
 
 - 在严格模式下，在全局作用域中，this指向window对象
 - 在严格模式下，函数中的this等于undefined
@@ -40,7 +42,7 @@ const sum = arr => arr.reduce((a, b) => a + b)
 - 在严格模式下，构造函数中的this指向构造函数创建的对象实例。
 - 在严格模式下，在事件处理函数中，this指向触发事件的目标对象。
 
-6. 图片懒加载原理
+## 6. 图片懒加载原理
    
   图片懒加载的原理主要是判断当前图片是否到了可视区域这一核心逻辑实现的
 
@@ -81,11 +83,11 @@ document.addEventListener('scroll', imgLazyLoad)
 
 ```
 
-7. 懒加载和预加载
+## 7. 懒加载和预加载
 
   两者都是提高页面性能有效的办法，两者主要区别是一个是提前加载，一个是迟缓甚至不加载。懒加载对服务器前端有一定的缓解压力作用，预加载则会增加服务器前端压力。
 
-8. 如何区分返回内容是文件流还是json数据
+## 8. 如何区分返回内容是文件流还是json数据
 
 ``` javascript
 await (await fetch(url)).blob();
@@ -93,7 +95,7 @@ await (await fetch(url)).blob();
 // Blob {size: 73226, type: "image/jpeg"}
 ```
 
-9. 写一个方法判断js的方法是内置的还是自定义的
+## 9. 写一个方法判断js的方法是内置的还是自定义的
 
 toString一下
 ``` javascript
@@ -102,7 +104,7 @@ function isNative (f) {
 }
 ```
 
-10. 微任务与宏任务
+## 10. 微任务与宏任务
 
 - JavaScript是单线程的语言
 - Event Loop是javascript的执行机制
@@ -155,21 +157,22 @@ setTimeout(function() {
 })
 ```
 
-11. 函数的方法 call()、apply()、bind()的区别
+## 11. 函数的方法 call()、apply()、bind()的区别
 
-  改变函数执行上下文，也就是改变this的指向
+### 改变函数执行上下文，也就是改变this的指向
 
 - call和apply改变了函数的this上下文后便执行该函数,而bind则是返回改变了上下文后的一个函数。
 - call和apply的第一个参数都是要改变上下文的对象，而call从第二个参数开始以参数列表的形式展现，apply则是把除了改变上下文对象的参数放在一个数组里面作为它的第二个参数。
 
 
-12. 前端性能优化
+## 12. 前端性能优化
 - 减少 HTTP 请求
 - 使用 HTTP2
 - 使用服务端渲染
   
   客户端渲染: 获取 HTML 文件，根据需要下载 JavaScript 文件，运行文件，生成 DOM，再渲染。
   服务端渲染：服务端返回 HTML 文件，客户端只需解析 HTML。
+
 - 静态资源使用 CDN
 - 将 CSS 放在文件头部，JavaScript 文件放在底部
 - 使用字体图标 iconfont 代替图片图标
@@ -184,7 +187,7 @@ setTimeout(function() {
 - 使用 Web Workers
 - 降低 CSS 选择器的复杂性（勿嵌套多层）
 
-13. 什么是防抖和节流，应用场景是啥
+## 13. 什么是防抖和节流，应用场景是啥
     
     都是用于限制函数被频繁调用
 
@@ -196,7 +199,7 @@ setTimeout(function() {
 
     场景：懒加载要监听计算滚动条的位置，使用节流按一定时间的频率获取；双十一抢商品
 
-14. 实现链式调用
+## 14. 实现链式调用
     
 链式调用的核心就在于调用完的方法将自身实例返回
 
@@ -213,7 +216,7 @@ let cl = new Class1()
 cl.method('第一次调用').method('第二次链式调用').method('第三次链式调用')
 ```
     
-15. 继承
+## 15. 继承
     
 **原型链继承**
 
