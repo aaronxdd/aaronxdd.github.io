@@ -12,4 +12,5 @@ description:
 - 由于cookie不支持跨域，跨域时的解决方案不同于同域
 
 ### 链接
-[前端需要了解的 SSO 与 CAS 知识](https://juejin.cn/post/6844903509272297480)
+- [单点登录（SSO）看这一篇就够了](https://www.jianshu.com/p/75edcc05acfd)
+- [前端需要了解的 SSO 与 CAS 知识](https://juejin.cn/post/6844903509272297480)

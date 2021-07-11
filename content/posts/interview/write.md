@@ -78,6 +78,14 @@ Function.prototype.myBind = (content) => {
 
 ## 3. 手写数组flat
 
+``` javascript
+const flat = arr => {
+  arr.reduce((pre, value) => {
+    return pre.concat(Array.isArray(value) ? flat(value) : value)
+  }, []);
+}
+```
+
 ## 4. 写一个 mySetInterVal(fn, a, b),每次间隔 a,a+b,a+2b 的时间，然后写一个 myClear，停止上面的 mySetInterVal
 
 ``` javascript
@@ -218,8 +226,7 @@ const urlSearch = href => {
 }
 ```
 
-## 12. 字符串模板
-## 13. 实现柯里化（Currying）
+## 12. 实现柯里化（Currying）
 
 ``` javascript
 function curry(fn) {
@@ -231,7 +238,7 @@ function curry(fn) {
 }
 ```
 
-## 14. 手写AJAX
+## 13. 手写AJAX
 
 ``` js
 const myAjax = (url) => {
@@ -252,7 +259,7 @@ const myAjax = (url) => {
 }
 ```
 
-## 15. 手写Promise
+## 14. 手写Promise
 
 ``` javascript
 const PADDING = "PADDING";
@@ -298,7 +305,7 @@ class MyPromise {
 }
 ```
     
-## 16. 实现 Promise.all
+## 15. 实现 Promise.all
   
 ``` js
 const promiseAll = (promises) => {
@@ -321,7 +328,7 @@ const promiseAll = (promises) => {
 }
 ```
 
-## 17. 手写模版字符串
+## 16. 手写模版字符串
 
 ``` javascript
 const render = (str, data) => {
