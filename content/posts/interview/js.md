@@ -300,5 +300,20 @@ console.log(dog2) // { name: "哈赤", colors: ["black", "white"], age: 1 }
 Sting、Number、Boolean、null、undefined、Symbol
 
 - 基本数据类型保存在栈内存中，因为基本数据类型占用空间小、大小固定，通过按值来访问，属于被频繁使用的数据。
-
 - 引用数据类型存储在堆内存中，因为引用数据类型占据空间大、大小不固定；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址
+
+
+## 17. Proxy的理解
+
+### 回答要点
+- Proxy的作用（拦截读取，写入等操作，可以覆盖原生操作）
+- Proxy和Object.defineProperty的区别（优势，Vue3用Proxy取代2版的defineProperty）
+- Reflect的用法（了解）
+
+### 链接
+[Proxy 和 Reflect](https://juejin.cn/post/6844904090116292616)
+
+## 18. Generator详解
+
+- 可控制的异步流程
+- async是Generator的实现
