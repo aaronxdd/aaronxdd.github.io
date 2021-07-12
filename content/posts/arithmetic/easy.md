@@ -1,6 +1,6 @@
 ---
 title: 算法题（简单系列）
-date: 2021-07-06T17:28:32.169Z
+date: 2021-07-12T21:28:32.169Z
 description: 
 ---
 
@@ -246,3 +246,60 @@ const reverseList = (head) => {
 }
 ```
 
+### 6. 二叉树的最大深度
+
+#### 题目描述
+
+给定一个二叉树，找出其最大深度。
+
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+**说明： 叶子节点是指没有子节点的节点。**
+
+#### 示例
+
+给定二叉树 **[3,9,20,null,null,15,7]**
+
+![maximum-depth-of-binary-tree](maximum-depth-of-binary-tree.jpeg)
+
+返回它的最大深度 3 。
+
+``` javascript
+const maxDepth = tree => {
+  if (!tree) {
+    return 0;
+  }
+  const maxLeft = maxDepth(tree.left);
+  const maxRight = maxDepth(tree.right);
+  return Math.max(maxLeft, maxRight) + 1;
+}
+```
+
+### 7. 环形链表
+
+#### 题目描述
+
+给定一个链表，判断链表中是否有环。
+
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+
+如果链表中存在环，则返回 true 。 否则，返回 false 。
+
+
+### 8. 合并二叉树
+
+#### 题目描述
+
+给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
+
+你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。
+
+#### 示例
+
+![merge-two-binary-trees](merge-two-binary-trees.jpeg)
+
+**注意：合并必须从两个树的根节点开始。**
+
+``` javascript
+
+```

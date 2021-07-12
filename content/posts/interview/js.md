@@ -316,4 +316,18 @@ Sting、Number、Boolean、null、undefined、Symbol
 ## 18. Generator详解
 
 - 可控制的异步流程
-- async是Generator的实现
+- async是Generator的实现（语法糖）
+
+## 19. 搞懂prototype和 __proto__
+
+### javascript继承的本质
+
+一个对象 A的__proto__属性指向的那个对象B，B就是 A 的原型对象（或者叫父对象），对象 A 可以使用对象 B 中的属性和方法，同时也可以使用对象 B 的 原型对象C 上的属性和方法，以此递归，就是所谓的原型链。
+
+### new 操作到底做了什么
+
+
+
+
+
+
