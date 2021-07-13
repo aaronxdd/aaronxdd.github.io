@@ -300,6 +300,3 @@ const maxDepth = tree => {
 
 **注意：合并必须从两个树的根节点开始。**
 
-``` javascript
-
-```
