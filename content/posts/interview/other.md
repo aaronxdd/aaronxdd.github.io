@@ -32,3 +32,7 @@ description:
 ## 4. git 如何取消add操作
 
 可以reset，reset后面可以跟commit ID，也可以跟Head指针回退add内容
+
+## 5. git的工作流
+
+## 6. keepAlive组件的原理
