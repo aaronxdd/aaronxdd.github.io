@@ -22,6 +22,9 @@ description:
 
 ## 3. git merge和rebase
 
+![git merge](git-merge.jpeg)
+![git rebase](git-rebase.jpeg)
+
 - 都是合并操作
 - 当需要保留详细的合并信息的时候建议使用git merge，特别是需要将分支合并进入master分支时；
 - 当发现自己修改某个功能时，频繁进行了git commit提交时，发现其实过多的提交信息没有必要时，可以尝试git rebase
@@ -35,4 +38,8 @@ description:
 
 ## 5. git的工作流
 
+dev、release、master分支
+
 ## 6. keepAlive组件的原理
+
+

@@ -285,6 +285,23 @@ const maxDepth = tree => {
 
 如果链表中存在环，则返回 true 。 否则，返回 false 。
 
+#### 思路
+
+给遍历过的节点打记号，如果遍历过程中遇到有记号的说明已环🤓
+
+``` javascript
+const hasCycle = head => {
+  while(head) {
+    if (head.tag) {
+      return true;
+    }
+    head.tag = true;
+    head = head.next;
+  }
+  return false;
+}
+```
+
 
 ### 8. 合并二叉树
 
@@ -299,4 +316,16 @@ const maxDepth = tree => {
 ![merge-two-binary-trees](merge-two-binary-trees.jpeg)
 
 **注意：合并必须从两个树的根节点开始。**
+
+``` javascript
+const mergeTrees = (t1, t2) => {
+  if (!t1 || !t2) {
+    return t1 || t2;
+  }
+  t1.value = t1.value + t2.value;
+  t1.left = mergeTrees(t1.left, t2.left);
+  t1.right = mergeTrees(t1.right, t2.right);
+  return t1;
+}
+```
 
