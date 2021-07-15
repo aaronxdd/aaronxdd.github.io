@@ -49,3 +49,18 @@ React并不是将click事件绑在该div的真实DOM上，而是在document处�
 - 新的 **startTransition** API（用于非紧急状态更新）
 - 渲染的自动批处理优化（主要解决异步回调中无法批处理的问题）
 - 支持 **React.lazy** 的 全新 SSR 架构（支持 **<Suspense>** 组件）
+
+## 9. React 开发Tips
+
+官方文档即是最佳实践
+
+- 尽量使用 react 高版本进行开发
+  - fiber 组件更新的优势
+  - 各种官方 hook 的使用（useMemo，useCallback）
+  - 等等
+
+- 数组遍历渲染时，key的正确使用
+- Fragment 的使用
+- Suspense 和 lazy 的搭配使用（懒加载）
+- 代码的提取（HOC，手写hook）
+- 合理使用状态管理（Redux，Context）
