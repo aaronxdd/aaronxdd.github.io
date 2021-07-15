@@ -4,9 +4,9 @@ date: 2021-07-14T21:28:32.169Z
 description: 
 ---
 
-### 1. 打乱数组
+## 1. 打乱数组
 
-#### 题目描述
+### 题目描述
 
 给你一个整数数组 nums ，设计算法来打乱一个没有重复元素的数组。
 
@@ -15,7 +15,7 @@ description:
 - **int[] reset()** 重设数组到它的初始状态并返回
 - **int[] shuffle()** 返回数组随机打乱后的结果
 
-#### 示例
+### 示例
 
 ``` javascript
   输入
@@ -31,19 +31,19 @@ description:
   solution.shuffle();    // 随机返回数组 [1, 2, 3] 打乱后的结果。例如，返回 [1, 3, 2]
 ```
 
-#### 提示：
+### 提示：
 
 ![shuffle-an-array](shuffle-an-array.jpeg)
 
-#### todo
+### todo
 
-### 2. 无重复字符的最长子串
+## 2. 无重复字符的最长子串
 
-#### 题目描述
+### 题目描述
 
 给定一个字符串 **s** ，请你找出其中不含有重复字符的 最长子串 的长度。
 
-#### 示例 1:
+### 示例 1:
 
 ``` javascript
   输入: s = "abcabcbb"
@@ -51,7 +51,7 @@ description:
   解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
 ```
 
-#### 示例 2:
+### 示例 2:
 
 ``` javascript
   输入: s = "bbbbb"
@@ -60,7 +60,7 @@ description:
 ```
 
 
-#### 示例 3:
+### 示例 3:
 
 ``` javascript
   输入: s = "pwwkew"
@@ -70,14 +70,14 @@ description:
 ```
 
 
-#### 示例 4:
+### 示例 4:
 
 ``` javascript
   输入: s = ""
   输出: 0
 ```
 
-#### 提示：
+### 提示：
 
 ![longest-substring-without-repeating-characters](longest-substring-without-repeating-characters.jpeg)
 
