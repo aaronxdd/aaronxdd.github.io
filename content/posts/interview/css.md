@@ -1,6 +1,6 @@
 ---
 title: 面试题集合（CSS篇）
-date: 2021-07-04T16:25:32.169Z
+date: 2021-07-16T12:00:32.169Z
 description: 
 ---
 
@@ -37,3 +37,140 @@ CSS2 中伪类、伪元素都是以单冒号:表示,CSS2.1 后规定伪类⽤单
 ### 不同之处：
     
 伪类其实就是基于普通DOM元素⽽产⽣的不同状态，他是DOM元素的某⼀特征。伪元素能够创建在DOM树中不存在的抽象对象，⽽且这些抽象对象是能够访问到的。
+
+## 2. position
+
+- static： 默认值。没有定位，元素出现在正常的流中（top, right, bottom, left 和 z-index 属性无效）
+- relative： 该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）
+- absolute： 元素会被移出正常文档流，并不为元素预留空间，通过指定元素相对于最近的 **非 static** 定位祖先元素的偏移，来确定元素位置。
+- fixed： 元素会被移出正常文档流，并不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。
+
+## 3. 
+
+- 定宽居中
+  
+  - absolute+负maigin
+  ``` css
+  .father {
+      width: 400px;
+      height: 400px;
+      border: 1px solid blue;
+      position: relative;
+  }
+  
+  .son {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      /* 1、定宽高定位：absolute + 负边距margin */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+  }
+  ```
+
+  - absolute+maigin:auto
+  ``` css
+  .father {
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      position: relative;
+  }
+  
+  .son {
+      width: 100px;
+      height: 100px;
+      background: green;
+      /*2、定宽高定位：absolute + margin:auto */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+  }
+  ```
+
+- 不定宽居中
+
+  - absolute+transform
+
+  ``` css
+  .father {
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      position: relative;
+  }
+  
+  .son {
+      background: green;
+      /* 1、不定宽高居中：（依赖translate 2d的兼容性）absolute+transform */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  ```
+
+  - lineheight（行内元素）
+
+  ``` css
+  .father {
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      /* 2、不定宽高居中  */
+      text-align: center;
+      line-height: 300px;
+      font-size: 0px;
+  }
+  
+  .son {
+      /* 2、不定宽高居中lineheight */
+      display: inline-block;
+      vertical-align: middle;
+      line-height: inherit;
+      text-align: left;
+      font-size: 16px;
+  }
+  ```
+
+  - flex布局
+
+  ``` css
+  .father {
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      /* 4、不定宽高居中flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  ```
+
+  - grid布局
+
+  ``` css
+  .father {
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      /* 5、grid */
+      display: grid;
+  }
+  
+  .son {
+      /* 5、不定宽高居中grid(兼容性不如flex 不推荐使用) */
+      justify-self: center;
+      align-self: center;
+  }
+  ```
+
+
+
+
