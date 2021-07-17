@@ -170,5 +170,17 @@ CSS2 中伪类、伪元素都是以单冒号:表示,CSS2.1 后规定伪类⽤单
       align-self: center;
   }
   ```
+## 4. link和@import的区别？
+
+- link 属于 XHTML 标签，⽽ @import 是 CSS 提供的。
+- ⻚⾯被加载时，link 会同时被加载，⽽ @import 引⽤的 CSS 会等到⻚⾯被加载完再加载。
+- link ⽅式的样式权重⾼于 @import 的权重。
+  
+## 5. em\px\rem区别
+
+- em：在 font-size 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width
+- rem：根元素的字体大小（html的font-size)
+- px：绝对单位，⻚⾯按精确像素展示
+
 
 

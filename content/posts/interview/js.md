@@ -1,6 +1,6 @@
 ---
 title: 面试题集合（JS篇）
-date: 2021-07-05T21:53:32.169Z
+date: 2021-07-17T18:44:32.169Z
 description: 
 ---
 
@@ -326,7 +326,28 @@ Sting、Number、Boolean、null、undefined、Symbol
 
 ### new 操作到底做了什么
 
+## 20. script标签中defer和async的区别
 
+都是异步加载 script 脚本
+- 如果脚本无需等待页面解析，且无依赖独立运行，那么应使用 async。
+- 如果脚本需要等待页面解析，且依赖于其它脚本，调用这些脚本时应使用 defer，将关联的脚本按所需顺序置于 HTML 中。
+
+## 21. CommonJs和Es Module的区别
+
+### CommonJs
+
+- CommonJs可以动态加载语句，代码发生在运行时
+- CommonJs导出值是拷贝，可以修改导出的值
+
+### Es Module
+
+- Es Module是静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时
+- Es Module混合导出，单个导出，默认导出，完全互不影响
+- Es Module导出是引用值之前都存在映射关系，并且值都是可读的，不能修改
+
+### 题外话
+
+webpack treeshaking 是基于静态检查，所以尽量使用 Es Module。
 
 
 
