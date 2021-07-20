@@ -64,3 +64,11 @@ React并不是将click事件绑在该div的真实DOM上，而是在document处�
 4. Suspense 和 lazy 的搭配使用（懒加载）
 5. 代码的提取（HOC，手写hook）
 6. 合理使用状态管理（Redux，Context）
+
+## 10. React的合成事件
+
+由于fiber机制的特点，生成一个fiber节点时，它对应的dom节点有可能还未挂载，onClick这样的事件处理函数作为fiber节点的prop，也就不能直接被绑定到真实的DOM节点上。
+为此，React提供了一种“顶层注册，事件收集，统一触发”的事件机制。
+
+委托到顶层root根节点上
+

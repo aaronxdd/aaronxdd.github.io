@@ -33,4 +33,3 @@ description:
 
   - content-type
   - content-security-policy（内容策略）
-  
