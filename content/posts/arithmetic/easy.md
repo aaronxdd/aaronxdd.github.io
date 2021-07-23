@@ -1,6 +1,6 @@
 ---
 title: 算法题（简单系列）
-date: 2021-07-12T21:28:32.169Z
+date: 2021-07-23T10:53:32.169Z
 description: 
 ---
 
@@ -387,5 +387,206 @@ const mergeTrees = (t1, t2) => {
 ![valid-parentheses-alert](valid-parentheses-alert.jpeg)
 
 ``` javascript
+const isValid = (str) => {
+  const { length } = str;
+  if (length % 2 !== 0) return false;
+  let arr = [];
+  for (let item of str) {
+    switch (item) {
+      case "(":
+      case "{":
+      case "[":
+        arr.push(item);
+        break;
+      case ")":
+        if (arr.pop() !== "(") return false;
+        break;
+      case "}":
+        if (arr.pop() !== "{") return false;
+        break;
+      case "]":
+        if (arr.pop() !== "[") return false;
+        break;
+    }
+  }
 
+  return arr.length === 0
+};
+```
+
+## 10. 爬楼梯
+
+### 题目描述
+
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+
+注意：给定 n 是一个正整数。
+
+### 示例 1：
+
+``` javascript
+输入： 2
+输出： 2
+解释： 有两种方法可以爬到楼顶。
+1.  1 阶 + 1 阶
+2.  2 阶
+```
+
+### 示例 2：
+
+``` javascript
+输入： 3
+输出： 3
+解释： 有三种方法可以爬到楼顶。
+1.  1 阶 + 1 阶 + 1 阶
+2.  1 阶 + 2 阶
+3.  2 阶 + 1 阶
+```
+
+``` javascript
+const climbStairs = (n) => {
+  if (n < 1) return 0;
+  const dp = [];
+  dp[1] = 1;
+  dp[2] = 2;
+  for (let i = 0; i < n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2];
+  }
+  return dp[n];
+};
+```
+
+## 11. 二叉树的中序遍历
+
+### 题目描述
+
+给定一个二叉树的根节点 root ，返回它的 中序 遍历。
+
+### 示例 1：
+
+![binary-tree-inorder-traversal1](binary-tree-inorder-traversal1.jpeg)
+
+``` javascript
+输入：root = [1,null,2,3]
+输出：[1,3,2]
+```
+
+### 示例 2：
+
+``` javascript
+输入：root = []
+输出：[]
+```
+
+### 示例 3：
+
+``` javascript
+输入：root = [1]
+输出：[1]
+```
+
+### 示例 4：
+
+![binary-tree-inorder-traversal2](binary-tree-inorder-traversal2.jpeg)
+
+``` javascript
+输入：root = [1,null,2]
+输出：[1,2]
+```
+
+### 示例 5：
+
+![binary-tree-inorder-traversal3](binary-tree-inorder-traversal3.jpeg)
+
+``` javascript
+输入：root = [1,null,2]
+输出：[1,2]
+```
+
+### 提示：
+
+![binary-tree-inorder-traversal-alert](binary-tree-inorder-traversal-alert.jpeg)
+
+``` javascript
+const inorderTraversal = (root) => {
+  const res = [];
+  const inorder = (root) => {
+    if (!root) return;
+    inorder(root.left);
+    res.push(root.val);
+    inorder(root.right);
+  }
+  inorder(root)
+  return res;
+};
+```
+
+## 12. 对称二叉树
+
+### 题目描述
+
+给定一个二叉树，检查它是否是镜像对称的。
+
+![symmetric-tree](symmetric-tree.jpeg)
+
+<!-- ``` javascript
+
+``` -->
+
+## 13. 买卖股票的最佳时机
+
+### 题目描述
+
+给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+
+你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+
+返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+
+### 示例 1：
+
+``` javascript
+输入：[7,1,5,3,6,4]
+输出：5
+解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。
+```
+
+### 示例 2：
+
+``` javascript
+输入：prices = [7,6,4,3,1]
+输出：0
+解释：在这种情况下, 没有交易完成, 所以最大利润为 0。
+```
+
+### 提示：
+
+![best-time-to-buy-and-sell-stock-alert](best-time-to-buy-and-sell-stock-alert.jpeg)
+
+
+## 14. 只出现一次的数字
+
+### 题目描述
+
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+
+### 说明：
+
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+### 示例 1:
+
+``` javascript
+输入: [2,2,1]
+输出: 1
+```
+
+### 示例 2:
+
+``` javascript
+输入: [4,1,2,1,2]
+输出: 4
 ```

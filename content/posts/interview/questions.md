@@ -89,3 +89,6 @@ description:
 - 对于经常不改动的静态资源可以在 nginx 上增加相关的缓存配置，尽可能的命中强缓存
 - 正确使用好前端资源打包的 hash
 - Service Worke 也可以针对缓存做一些优化
+
+## 5. bff如何做鉴权
+## 6. setTimeout

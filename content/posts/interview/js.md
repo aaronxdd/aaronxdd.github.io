@@ -350,5 +350,9 @@ Sting、Number、Boolean、null、undefined、Symbol
 webpack treeshaking 是基于静态检查，所以尽量使用 Es Module。
 
 
+## 22. getSnapshotBeforeUpdate
 
+## 23. target和currentTarget
+
+## 24. 常用的hooks
 
