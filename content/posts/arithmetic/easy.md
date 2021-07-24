@@ -590,3 +590,87 @@ const inorderTraversal = (root) => {
 输入: [4,1,2,1,2]
 输出: 4
 ```
+
+``` javascript
+const singleNumber = (nums) => {
+  let obj = {};
+  for(const num of nums) {
+    if (!obj[num]) {
+      obj[num] = true;
+    } else {
+      delete obj[num]
+    }
+  }
+  return Number(Object.keys(obj)?.[0])
+};
+```
+
+## 15. 最小栈
+
+### 题目描述
+
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+
+  - push(x) —— 将元素 x 推入栈中。
+  - pop() —— 删除栈顶的元素。
+  - top() —— 获取栈顶元素。
+  - getMin() —— 检索栈中的最小元素。
+
+### 示例:
+
+``` javascript
+  输入：
+  ["MinStack","push","push","push","getMin","pop","top","getMin"]
+  [[],[-2],[0],[-3],[],[],[],[]]
+
+  输出：
+  [null,null,null,null,-3,null,0,-2]
+
+  解释：
+  MinStack minStack = new MinStack();
+  minStack.push(-2);
+  minStack.push(0);
+  minStack.push(-3);
+  minStack.getMin();   --> 返回 -3.
+  minStack.pop();
+  minStack.top();      --> 返回 0.
+  minStack.getMin();   --> 返回 -2.
+```
+
+### 提示：
+
+- pop、top 和 getMin 操作总是在 非空栈 上调用。
+
+``` javascript
+var MinStack = function() {
+    this.x_stack = [];
+    this.min_stack = [Infinity];
+};
+
+MinStack.prototype.push = function(x) {
+    this.x_stack.push(x);
+    this.min_stack.push(Math.min(this.min_stack[this.min_stack.length - 1], x));
+};
+
+MinStack.prototype.pop = function() {
+    this.x_stack.pop();
+    this.min_stack.pop();
+};
+
+MinStack.prototype.top = function() {
+    return this.x_stack[this.x_stack.length - 1];
+};
+
+MinStack.prototype.getMin = function() {
+    return this.min_stack[this.min_stack.length - 1];
+};
+```
+
+## 16. 相交链表
+
+### 题目描述
+
+给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+
+图示两个链表在节点 c1 开始相交
+
