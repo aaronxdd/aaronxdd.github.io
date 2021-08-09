@@ -7,6 +7,7 @@ export function getPostsFolders() {
   readdirSync(`${process.cwd()}/content/posts`).forEach((dirName) => {
     readdirSync(`${process.cwd()}/content/posts/${dirName}`).forEach(
       (fileName) => {
+        if (dirName === 'arithmetic' || dirName === 'interview') return;
         postsFolders.push({
           directory: dirName,
           filename: fileName,
