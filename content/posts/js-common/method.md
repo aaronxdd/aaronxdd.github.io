@@ -254,3 +254,17 @@ const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);
 ``` javascript
 const goToTop = () => window.scrollTo(0, 0);
 ```
+
+## Date
+
+1. 将时间转化为 YYYY-MM-DD 格式
+
+``` javascript
+// `date` is a `Date` object
+const formatYmd = date => date.toISOString().slice(0, 10);
+
+// Example
+formatYmd(new Date());      // 2020-05-06
+```
+
+2. 
