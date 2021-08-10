@@ -1,6 +1,6 @@
 ---
 title: js常用方法集合（一）
-date: 2021-06-30T20:00:32.169Z
+date: 2021-08-10T17:22:32.169Z
 description: 
 ---
 
@@ -267,4 +267,24 @@ const formatYmd = date => date.toISOString().slice(0, 10);
 formatYmd(new Date());      // 2020-05-06
 ```
 
-2. 
+2. 计算当前时间是这一年的第几天
+
+``` javascript
+// `date` is a Date object
+const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+
+// Example
+dayOfYear(new Date(2020, 04, 16));      // 137
+```
+
+3. 获取给定月份的天数
+
+``` javascript
+const daysInMonth = (month, year) => new Date(year, month, 0).getDate();
+```
+
+4. 获取给定年份的总天数
+
+``` javascript
+const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;
+```
