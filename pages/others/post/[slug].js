@@ -35,7 +35,7 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
 
       <nav className="flex flex-wrap justify-between mb-10">
         {previousPost ? (
-          <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
+          <Link href={"/others/post/[slug]"} as={`/post/${previousPost.slug}`}>
             <a className="text-lg font-bold">
               ← {previousPost.frontmatter.title}
             </a>
@@ -44,7 +44,7 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
           <div />
         )}
         {nextPost ? (
-          <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
+          <Link href={"/others/post/[slug]"} as={`/post/${nextPost.slug}`}>
             <a className="text-lg font-bold">{nextPost.frontmatter.title} →</a>
           </Link>
         ) : (
@@ -89,9 +89,9 @@ const CodeBlock = ({ language, value }) => {
 const MarkdownImage = ({ alt, src }) => (
   <Image
     alt={alt}
-    src={require(`../../content/assets/${src}`)}
-    webpSrc={require(`../../content/assets/${src}?webp`)}
-    previewSrc={require(`../../content/assets/${src}?lqip`)}
+    src={require(`../../../content/assets/${src}`)}
+    webpSrc={require(`../../../content/assets/${src}?webp`)}
+    previewSrc={require(`../../../content/assets/${src}?lqip`)}
     className="w-full"
   />
 );

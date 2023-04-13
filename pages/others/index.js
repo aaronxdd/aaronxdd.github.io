@@ -9,7 +9,7 @@ export default function others({ posts }) {
       <ul>
         {posts.map(({ frontmatter: { title }, slug }) => (
           <li key={slug} className="mt-3">
-            <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+            <Link href={"/others/post/[slug]"} as={`/others/post/${slug}`}>
               <a>{title}</a>
             </Link>
           </li>
