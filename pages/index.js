@@ -9,13 +9,16 @@ export default function Home({ posts }) {
       <SEO title="All posts" />
       <Bio className="my-14" />
       <ul>
-        {posts.map(({ frontmatter: { title }, slug }) => (
-          <li key={slug} className="mt-3">
-            <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-              <a>{title}</a>
-            </Link>
-          </li>
-        ))}
+        <li key={"web3"} className="mt-3">
+          <Link href={"/web3"}>
+            <a>web3初探</a>
+          </Link>
+        </li>
+        <li key={"others"} className="mt-3">
+          <Link href={"/others"}>
+            <a>杂</a>
+          </Link>
+        </li>
       </ul>
     </Layout>
   );
