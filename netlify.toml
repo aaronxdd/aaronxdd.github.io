@@ -7,6 +7,6 @@
   # Default build command.
   command = "npm run build && npx next export"
 
-  environment = { NODE_VERSION = "12.13.1" }
+  environment = { NODE_VERSION = "18.16.0" }
 
 
